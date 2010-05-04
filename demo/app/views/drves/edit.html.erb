@@ -1,0 +1,24 @@
+<h1>Editing drf</h1>
+
+<% form_for(@drf) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :drfcode %><br />
+    <%= f.text_field :drfcode %>
+  </p>
+  <p>
+    <%= f.label :drfname %><br />
+    <%= f.text_field :drfname %>
+  </p>
+  <p>
+    <%= f.label :dcfcode %><br />
+    <%= f.text_field :dcfcode %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @drf %> |
+<%= link_to 'Back', drves_path %>

@@ -1,0 +1,37 @@
+<!--
+<h1>Listing acts</h1>
+-->
+<h1><%= I18n.t('layout.index.title') %></h1>
+
+
+<table border='1'>
+  <tr style='color:ivory; background-color:gray;'>
+    <th><%= I18n.t('layout.common.plandate') %></th>
+    <th><%= I18n.t('layout.common.dcfname') %></th>
+    <th><%= I18n.t('layout.common.drfname') %></th>
+    <th><%= I18n.t('layout.common.itemname') %></th>
+    <th><%= I18n.t('layout.common.acttypename') %></th>
+    <th><%= I18n.t('layout.common.visitdate') %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @acts.each do |act| %>
+  <tr>
+    <td><%=h act.plandate %></td>
+    <td><%= Dcf.find(:first, :conditions => "dcfcode == '" + act.dcfcode + "'").dcfname %></td>
+    <td><%= Drf.find(:first, :conditions => "drfcode == '" + act.drfcode + "'").drfname %></td>
+    <td><%= Item.find(:first, :conditions => "itemcode == '" + act.itemcode + "'").itemname %></td>
+    <td><%= Acttype.find(:first, :conditions => "acttypecode == '" + act.acttypecode + "'").acttypename %></td>
+    <td><%=h act.visitdate %></td>
+    <td><%= link_to I18n.t('layout.common.show'), act %></td>
+    <td><%= link_to I18n.t('layout.common.edit'), edit_act_path(act) %></td>
+    <td><%= link_to I18n.t('layout.common.destroy'), act, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to I18n.t('layout.index.newact'), new_act_path %>
