@@ -1,0 +1,9 @@
+﻿# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  dcfcode: MyString
+  dcfname: MyString
+
+two:
+  dcfcode: MyString
+  dcfname: MyString
