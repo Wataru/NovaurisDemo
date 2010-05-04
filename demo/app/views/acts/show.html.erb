@@ -1,0 +1,37 @@
+<p>
+  <b><%= I18n.t('layout.common.plandate') %>:</b>
+  <%=h @act.plandate %>
+</p>
+
+<p>
+  <b><%= I18n.t('layout.common.dcfname') %>:</b>
+  <%=h @act.dcfcode %>:
+  <%= Dcf.find(:first, :conditions => "dcfcode == '" + @act.dcfcode + "'").dcfname %>
+</p>
+
+<p>
+  <b><%= I18n.t('layout.common.drfname') %>:</b>
+  <%=h @act.drfcode %>:
+  <%= Drf.find(:first, :conditions => "drfcode == '" + @act.drfcode + "'").drfname %>
+</p>
+
+<p>
+  <b><%= I18n.t('layout.common.itemname') %>:</b>
+  <%=h @act.itemcode %>:
+  <%= Item.find(:first, :conditions => "itemcode == '" + @act.itemcode + "'").itemname %>
+</p>
+
+<p>
+  <b><%= I18n.t('layout.common.acttypename') %>:</b>
+  <%=h @act.acttypecode %>:
+  <%= Acttype.find(:first, :conditions => "acttypecode == '" + @act.acttypecode + "'").acttypename %>
+</p>
+
+<p>
+  <b><%= I18n.t('layout.common.visitdate') %>:</b>
+  <%=h @act.visitdate %>
+</p>
+
+
+<%= link_to I18n.t('layout.common.edit'), edit_act_path(@act) %> |
+<%= link_to I18n.t('layout.common.back'), acts_path %>
