@@ -1,0 +1,19 @@
+<h1>New dcf</h1>
+
+<% form_for(@dcf) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :dcfcode %><br />
+    <%= f.text_field :dcfcode %>
+  </p>
+  <p>
+    <%= f.label :dcfname %><br />
+    <%= f.text_field :dcfname %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', dcfs_path %>
