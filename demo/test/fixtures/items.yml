@@ -1,9 +1,0 @@
-﻿# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  itemcode: MyString
-  itemname: MyString
-
-two:
-  itemcode: MyString
-  itemname: MyString
